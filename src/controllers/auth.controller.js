@@ -5,7 +5,7 @@ const catchAsync = require('./../utils/catchAsync');
 const AppError = require('./../utils/appError');
 const Token = require('./../services/token');
 
-const User = require('../models/userModel');
+const User = require('../models/user.model');
 const userService = require('./../services/userService');
 class authController {
   signUpUser = catchAsync(async (req, res, next) => {

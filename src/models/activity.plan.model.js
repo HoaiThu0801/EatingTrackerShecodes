@@ -1,5 +1,5 @@
 const mongoose = require('mongoose');
-const PersonalPlan = require('./personalPlanModel');
+const PersonalPlan = require('./personal.plan.model');
 
 const activityPlanSchema = new mongoose.Schema({
   personalPlan: {

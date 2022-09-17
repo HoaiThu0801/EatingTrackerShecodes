@@ -11,14 +11,12 @@ const AppError = require('./utils/appError');
 const globalErrorHandler = require('./middlewares/error');
 const route = require('./routes/index');
 //Implement cors
-app.use(cors());
+app.use(cors({
+  origin: '*',
+  optionsSuccessStatus: 200
+}));
 //Access-Controll-Allow-Origin
-app.options('*', cors());
-app.all('/', function(req, res, next) {
-  res.header("Access-Control-Allow-Origin", "*");
-  res.header("Access-Control-Allow-Headers", "X-Requested-With");
-  next()
-});
+//app.options('*', cors());
 //MIDDLEWWARE
 //Set security HTTP headers
 app.use(helmet());
