@@ -1,0 +1,45 @@
+{
+  "name": "recruitment-website",
+  "version": "1.0.0",
+  "description": "Build API for recruitment website",
+  "main": "src/server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node src/server.js",
+    "start:dev": "nodemon src/server.js",
+    "start:prod": "NODE_ENV=production nodemon src/server.js "
+  },
+  "author": "Hoai Thu",
+  "license": "ISC",
+  "dependencies": {
+    "@google-cloud/storage": "^5.15.3",
+    "axios": "^0.22.0",
+    "bcryptjs": "^2.4.3",
+    "cloudinary": "^1.27.1",
+    "cors": "^2.8.5",
+    "dateformat": "^2.2.0",
+    "dotenv": "^10.0.0",
+    "exceljs": "^4.3.0",
+    "express": "^4.17.1",
+    "express-mongo-sanitize": "^2.1.0",
+    "express-rate-limit": "^5.5.0",
+    "firebase-admin": "^10.0.0",
+    "helmet": "^4.6.0",
+    "hpp": "^0.2.3",
+    "html-to-text": "^8.1.0",
+    "jsonwebtoken": "^8.5.1",
+    "mongoose": "^6.0.8",
+    "mongoose-delete": "^0.5.4",
+    "morgan": "^1.10.0",
+    "multer": "^1.4.3",
+    "nodemailer": "^6.6.5",
+    "paypal-rest-sdk": "^1.8.1",
+    "slugify": "^1.6.0",
+    "socket.io": "^4.4.1",
+    "validator": "^13.6.0",
+    "xss-clean": "^0.1.1"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.13"
+  }
+}
