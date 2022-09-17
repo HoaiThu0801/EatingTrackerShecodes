@@ -35,5 +35,38 @@ const personalPlanSchema = new mongoose.Schema({
             values: ['Loose', 'Keep', 'Gain'],
             message: 'Activity frequency includes: Loose, Keep, Gain weight',
           }, 
+    },
+    initialHeight: {
+        type: Number, 
+        required: [true, 'You must enter height'],
+    },
+    initialWeight: {
+        type: Number, 
+        required: [true, 'You must enter weight'],
+    },
+    currentHeight: {
+        type: Number, 
+    },
+    currentWeight: {
+        type: Number, 
+    },
+    watersCup: {
+        type: Number,
+        default: 0
+    },
+    totalKcal: {
+        type: Number,
+        default: 0
+    },
+    user: {
+        type: mongoose.Schema.ObjectId,
+        ref: 'User',
     }
+},
+{
+    timestamps: true,
+    toJSON: { virtuals: true },
+    toObject: { virtuals: true },
 })
+const PersonalPlan = mongoose.model('PersonalPlan', personalPlanSchema);
+module.exports = PersonalPlan;
