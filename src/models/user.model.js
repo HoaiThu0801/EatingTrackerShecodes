@@ -7,14 +7,14 @@ const userSchema = new mongoose.Schema(
   {
     email: {
       type: String,
-      required: [true, 'Hãy nhập email của bạn'],
-      unique: [true, 'Email bị trùng. Vui lòng thử email khác'],
+      required: [true, 'Please enter email'],
+      unique: [true, 'Email is duplicated. Please another email'],
       trim: true,
-      validate: [validator.isEmail, 'Vui lòng cung cấp email hợp lệ'],
+      validate: [validator.isEmail, 'Please give valid email'],
     },
     password: {
       type: String,
-      required: [true, 'Vui lòng nhập password của bạn'],
+      required: [true, 'Please enter your password'],
       trim: true,
       minlength: 8,
       maxlength: 32,
@@ -22,13 +22,13 @@ const userSchema = new mongoose.Schema(
     },
     passwordConfirm: {
       type: String,
-      required: [true, 'Vui lòng nhập lại password của bạn'],
+      required: [true, 'Please enter again your password'],
       trim: true,
       validate: {
         validator: function (el) {
           return el === this.password;
         },
-        message: 'Password không giống nhau',
+        message: 'Password is not the same',
       },
     },
     avatar: {

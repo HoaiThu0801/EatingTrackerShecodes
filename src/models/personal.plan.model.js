@@ -4,13 +4,12 @@ const personalPlanSchema = new mongoose.Schema({
     username: {
         type: String,
         required: [true, 'You must enter username'],
-        unique: [true, 'Username is duplicated. Please try another username'],
         trim: true,
         minlength: 8,
         maxlength: 32,
       },
-    DOB: {
-        type: Date,
+    age: {
+        type: Number,
     },
     gender: {
         type: String,
@@ -50,9 +49,9 @@ const personalPlanSchema = new mongoose.Schema({
     currentWeight: {
         type: Number, 
     },
-    watersCup: {
+    waterCups: {
         type: Number,
-        default: 0
+        default: 8
     },
     totalKcal: {
         type: Number,

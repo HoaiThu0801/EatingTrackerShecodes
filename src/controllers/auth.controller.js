@@ -6,7 +6,7 @@ const AppError = require('./../utils/appError');
 const Token = require('./../services/token');
 
 const User = require('../models/user.model');
-const userService = require('./../services/userService');
+const userService = require('../services/user.service');
 class authController {
   signUpUser = catchAsync(async (req, res, next) => {
     //1) Create job seeker
