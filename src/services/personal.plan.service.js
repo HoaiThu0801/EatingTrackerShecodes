@@ -29,6 +29,14 @@ const calculateTDEE = async (weight, height, age, gender, activityFrequency) => 
   }
   return Math.round(activityLevel[activityFrequency]* await calculatetBMR(weight, height, age, gender), 2);
 }
+const getPersonalPlan = async(Id) => {
+  return await PersonalPlan.findById(Id);
+}
+const getPersonalPlanUserId = async(userId) => {
+  return await PersonalPlan.find({user: userId})
+}
 module.exports = {
   createPersonalPlan,
-  };
+  getPersonalPlan,
+  getPersonalPlanUserId
+};

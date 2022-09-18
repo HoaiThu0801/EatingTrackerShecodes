@@ -11,6 +11,24 @@ class personalPlanController{
             PersonalPlan: personalPlan, 
           },
         });
-      });
+    });
+    getPersonalPlan = catchAsync(async (req, res, next) => {
+        const personalPlan = await personalPlanService.getPersonalPlan(req.params.idPersonalPlan);
+        return res.status(200).json({
+            status: 'success',
+            data: {
+              PersonalPlan: personalPlan, 
+            },
+          })
+    });
+    getPersonalPlanUserId = catchAsync(async (req, res, next) => {
+        const personalPlan = await personalPlanService.getPersonalPlanUserId(req.user.id);
+        return res.status(200).json({
+            status: 'success',
+            data: {
+              PersonalPlan: personalPlan, 
+            },
+          })
+    })
 }
 module.exports = new personalPlanController();

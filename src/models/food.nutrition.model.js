@@ -1,30 +1,57 @@
 const mongoose = require('mongoose');
 
-const activitySchema = new mongoose.Schema({
+const foodNutritionSchema = new mongoose.Schema({
     name: {
         type: String,
         required: [true, 'You must enter name'],
         unique: [true, 'Name is duplicated. Please try another name'],
     },
     kcal: {
-        type: String,
+        type: Number,
         required: [true, 'You must enter kcal'],
     },
     nutrients: {
         type: {
-            protein: Number,
-            carbohydrates: Number,
-            fiber: Number,
-            sugar: Number,
-            fat: Number,
-            saturated: Number
+            protein: {
+                type: Number,
+                default: 0
+            },
+            carbohydrates: {
+                type: Number,
+                default: 0
+            },
+            fiber: {
+                type: Number,
+                default: 0
+            },
+            sugar: {
+                type: Number,
+                default: 0
+            },
+            fat: {
+                type: Number,
+                default: 0
+            },
+            saturated: {
+                type: Number,
+                default: 0
+            }
         },
     },
     macros: {
         type: {
-            carbohydrates: Number,
-            fat: Number,
-            protein: Number
+            carbohydrates: {
+                type: Number,
+                default: 0
+            },
+            fat: {
+                type: Number,
+                default: 0
+            },
+            protein: {
+                type: Number,
+                default: 0
+            }
         }
     },
     image: {
@@ -36,5 +63,5 @@ const activitySchema = new mongoose.Schema({
     toJSON: { virtuals: true },
     toObject: { virtuals: true },
 })
-const Activity = mongoose.model('Activity', activitySchema);
-module.exports = Activity;
+const FoodNutrition = mongoose.model('FoodNutrition', foodNutritionSchema);
+module.exports = FoodNutrition;
